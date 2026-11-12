@@ -1,3 +1,4 @@
+
 import { Routes, Route, useNavigate } from "react-router-dom";
 import handcraftHero from "./assets/handcraft-hero.png";
 
@@ -6,14 +7,14 @@ import Signup from "./Pages/Signup";
 import Dashboard from "./Pages/Dashboard";
 import Courses from "./Pages/Courses";
 import CoursesDetail from "./Pages/CoursesDetail";
-import LanguageSwitcher from "./Components/LanguageSwitcher";
-import { useLanguage } from "./Context/LanguageContext";
 import Marketplace from "./Pages/Marketplace";
 
-import VerifyOTP from "./Pages/VerifyOTP";
+import LanguageSwitcher from "./Components/LanguageSwitcher";
+import { useLanguage } from "./Context/LanguageContext";
+
+import VerifyOtp from "./Pages/VerifyOtp";
 import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
-
 
 function HomePage() {
   const navigate = useNavigate();
@@ -368,7 +369,7 @@ function App() {
       <Route path="/courses" element={<Courses />} />
       <Route path="/courses/:id" element={<CoursesDetail />} />
       <Route path="/marketplace" element={<Marketplace />} />
-      <Route path="/verify-otp" element={<VerifyOTP />} />
+      <Route path="/verify-otp" element={<VerifyOtp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
     </Routes>
