@@ -1,0 +1,39 @@
+
+import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: 80
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true
+    },
+    password: {
+      type: String,
+      required: true
+    },
+    emailVerified: {
+      type: Boolean,
+      default: false
+    },
+    verificationOtpHash: String,
+    verificationOtpExpires: Date,
+    resetOtpHash: String,
+    resetOtpExpires: Date,
+    resetOtpAttempts: {
+      type: Number,
+      default: 0
+    }
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model("User", userSchema);
